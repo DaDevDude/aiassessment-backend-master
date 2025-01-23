@@ -1,0 +1,36 @@
+# .gitignore
+
+# Ignore .env file
+.env*
+
+# Ignore node_modules directory
+node_modules/
+
+# Ignore logs and build artifacts
+logs/
+dist/
+build/
+
+# Ignore npm debug log
+npm-debug.log
+
+# Ignore yarn log
+yarn-error.log
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore Visual Studio Code settings
+.vscode/
+
+# Ignore JetBrains IDE settings
+.idea/
+
+# Ignore system and application-specific files
+*.log
+*.lock
+*.pid
+*.pid.lock
+*.sqlite
+*.db
+
