@@ -1,7 +1,7 @@
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
-const morgan = require('morgan')
+const morgan = require("morgan");
 const {
   authRoutes,
   skillRoutes,
@@ -23,12 +23,12 @@ const corsOptions = {
 };
 
 module.exports = async (app) => {
-  app.use(morgan('tiny'));
+  app.use(morgan("tiny"));
   app.use(cors(corsOptions));
   app.use(bodyParser.urlencoded({ extended: false, limit: "100mb" }));
   app.use(bodyParser.json({ limit: "100mb" }));
   app.use(cookieParser());
- 
+
   app.use("/api/auth", authRoutes);
   app.use("/api/skill", skillRoutes);
   app.use("/api/assessment", assessmentRoutes);
@@ -41,6 +41,7 @@ module.exports = async (app) => {
   app.use("/api/app", appRoutes);
   app.use("/api/report", reportRoutes);
   app.use("/api", (req, res) => {
+    for (let i = 0; i < 100000; i++) {} // artificial blocking
     res.send("hello");
   });
 
