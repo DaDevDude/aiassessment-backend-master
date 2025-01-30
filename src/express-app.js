@@ -41,8 +41,8 @@ module.exports = async (app) => {
   app.use("/api/app", appRoutes);
   app.use("/api/report", reportRoutes);
   app.use("/api", (req, res) => {
-    for (let i = 0; i < 100000; i++) {} // artificial blocking
-    res.send("hello");
+    for (let i = 0; i < 100000000; i++) {} // artificial blocking
+    res.send("hello with delay");
   });
 
   app.use((error, req, res, next) => {
